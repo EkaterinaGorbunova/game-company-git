@@ -82,9 +82,9 @@ require_once "./common/functions_defs.php";
 
                                         <?php
                                         if($_SESSION["name"] !== "admin") {
-                                            echo "<h1 class='login-h1'>Welcome back, $name!<br>Now you can see your shopping cart</h1>";
+                                            echo "<h1 class='login-h1'>Welcome back, $name!</h1>";
                                         }
-                                        print_r($_SESSION);
+//                                        print_r($_SESSION);
                                         }
                                 else {
                                     $login_error = "Error: invalid username or password";
@@ -102,7 +102,7 @@ require_once "./common/functions_defs.php";
 
                                 </ul>
 
-                        <?php echo "<h1 class='login-h1'>Welcome back, $get_name!<br>Now you can see your shopping cart</h1>";
+                        <?php echo "<h1 class='login-h1'>Welcome back, $get_name!</h1>";
                     }
                 ?>
         </nav>

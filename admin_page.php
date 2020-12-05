@@ -76,7 +76,8 @@ require_once "./common/functions_defs.php";
 
                             <?php echo "<input type='hidden' value=$game_id name='game_id'/>";?>
                         </form>
-                        <form action="edit_game.php" method="post">
+                        <form action="game_edit.php" method="post">
+                            <input type="hidden" name="title" value="<?php echo $row['gamename'] ?>"/>
                             <?php echo "<input type='submit' value='Edit' name='edit_command'/></td>"; ?>
                         </form>
                         <?php echo "</tr>";

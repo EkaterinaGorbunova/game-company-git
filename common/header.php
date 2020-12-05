@@ -1,7 +1,12 @@
+<?php
+if (!isset($title))
+    $title = "";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Forged</title>
+    <title><?php echo $title ?></title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -33,7 +38,9 @@
                             }
                             echo "<li class='submenu-item'><a href='game_page.php?id=$id'>$gamename</a></li><br>";
                         }
-                    } ?>
+                    }
+                    $conn->close();
+                    ?>
                     </ul>
                 </li>
                 <li class="menu-item"><a href="#">ABOUT</a></li>
