@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="539cd656-44f3-4cba-bd42-ae984d91d462" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="ProjectId" id="1knHC4VZZJ3hNR0k4A1taD0eDG6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mariadb" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Kate\Desktop\Vanier College\!_Fall_2020\!_420-988-VA WEB DATABASE PROJECT\game-company" />
+      <recent name="C:\Users\Kate\Desktop\Vanier College\!_Fall_2020\!_420-988-VA WEB DATABASE PROJECT\game-company\common" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Kate\Desktop\Vanier College\!_Fall_2020\!_420-988-VA WEB DATABASE PROJECT\game-company" />
+      <recent name="C:\Users\Kate\Desktop\Vanier College\!_Fall_2020\!_420-988-VA WEB DATABASE PROJECT\game-company\common" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHP Script.insert_test.php">
+    <configuration name="create_new_account.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/create_new_account.php">
+      <method v="2" />
+    </configuration>
+    <configuration name="insert_test.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/insert_test.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.insert_test.php" />
+        <item itemvalue="PHP Script.create_new_account.php" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="539cd656-44f3-4cba-bd42-ae984d91d462" name="Default Changelist" comment="" />
+      <created>1606329305716</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606329305716</updated>
+      <workItem from="1606329307106" duration="24278000" />
+      <workItem from="1606407471717" duration="59806000" />
+      <workItem from="1606538229985" duration="130571000" />
+      <workItem from="1607016302753" duration="46406000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="507" y="73" key="#PHP" timestamp="1606335861811">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="507" y="73" key="#PHP/0.0.1600.860@0.0.1600.860" timestamp="1606335861811" />
+    <state x="176" y="271" key="#SQL_Dialects" timestamp="1606761622108">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="176" y="271" key="#SQL_Dialects/0.0.1600.860@0.0.1600.860" timestamp="1606761622108" />
+    <state x="400" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606760766976">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="400" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1606760766976" />
+    <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1606747579889">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1606747579889" />
+    <state width="1069" height="251" key="GridCell.Tab.0.bottom" timestamp="1607140010722">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1069" height="251" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1607140010722" />
+    <state width="1069" height="251" key="GridCell.Tab.0.center" timestamp="1607140010722">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1069" height="251" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1607140010722" />
+    <state width="1069" height="251" key="GridCell.Tab.0.left" timestamp="1607140010722">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1069" height="251" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1607140010722" />
+    <state width="1069" height="251" key="GridCell.Tab.0.right" timestamp="1607140010722">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1069" height="251" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1607140010722" />
+    <state x="631" y="463" key="NewPhpFileDialog" timestamp="1607027675941">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="631" y="463" key="NewPhpFileDialog/0.0.1600.860@0.0.1600.860" timestamp="1607027675941" />
+    <state x="572" y="127" width="1292" height="817" key="dock-window-1" timestamp="1606445991436">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="572" y="127" width="1292" height="817" key="dock-window-1/0.0.1600.860@0.0.1600.860" timestamp="1606445991436" />
+    <state x="456" y="195" key="run.anything.popup" timestamp="1607109415379">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1607109415379" />
+    <state x="592" y="289" key="scopes" timestamp="1606335980498">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="592" y="289" key="scopes/0.0.1600.860@0.0.1600.860" timestamp="1606335980498" />
+    <state x="463" y="180" key="search.everywhere.popup" timestamp="1606363098076">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="463" y="180" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1606363098076" />
+  </component>
+</project>
