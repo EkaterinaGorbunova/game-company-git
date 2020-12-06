@@ -4,36 +4,16 @@ if (!isset($_SESSION["token"])) {
     $_SESSION["token"] = bin2hex(random_bytes(24));
 }
 require_once "./common/functions_defs.php";
+$title = "VR Games";
+require_once "./common/header.php";
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Martov Co</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
 
-<header>
-    <nav class="nav">
-        <img src="img/martov-transparent-background.png" width="250px" height="80px">
-        <ul class="menu">
-            <li class="menu-item"><a href="index.php">HOME</a></li>
-            <li class="menu-item"><a href="#">VR GAMES</a>
-                <ul class="submenu">
-                    <li class="submenu-item"><a href="chiaro.php">CHIARO</a></li><br>
-                    <li class="submenu-item"><a href="forged.php">FORGED</a></li>
-                </ul>
-            </li>
-            <li class="menu-item"><a href="#">ABOUT</a></li>
-            <li class="menu-item"><a href="login.php">LOGIN
-                    <i class="fa fa-fw fa-user" style="font-size:18px"></i></a></li>
-        </ul>
-    </nav>
-</header>
 
-<body class="vr-games-catalog-body">
-<main class="vr-games-catalog-main">
+<!--<body class="vr-games-catalog-body">-->
+<!--<main class="vr-games-catalog-main">-->
+
+<main class="login-main vr-games-catalog-body">
     <div id="images">
 
         <?php

@@ -21,8 +21,8 @@ require_once "./common/functions_defs.php";
             <li class="menu-item"><a href="index.php">HOME</a></li>
             <li class="menu-item"><a href="vr_games.php">VR GAMES</a>
                 <ul class="submenu">
-                    <li class="submenu-item"><a href="chiaro.php">CHIARO</a></li><br>
-                    <li class="submenu-item"><a href="forged.php">FORGED</a></li>
+                    <li class="submenu-item"><a href="!_old/chiaro.php">CHIARO</a></li><br>
+                    <li class="submenu-item"><a href="!_old/forged.php">FORGED</a></li>
                 </ul>
             </li>
             <li class="menu-item"><a href="#">ABOUT</a></li>

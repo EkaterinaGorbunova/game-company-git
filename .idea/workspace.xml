@@ -1,9 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="539cd656-44f3-4cba-bd42-ae984d91d462" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/about.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chiaro.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/functions_defs.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/functions_defs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_new_account.php" beforeDir="false" afterPath="$PROJECT_DIR$/create_new_account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forged.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/game_delete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/game_edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/game_page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping_cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/shopping_cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vr_games.php" beforeDir="false" afterPath="$PROJECT_DIR$/vr_games.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,11 +68,12 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Kate\Desktop\Vanier College\!_Fall_2020\!_420-988-VA WEB DATABASE PROJECT\game-company" />
       <recent name="C:\Users\Kate\Desktop\Vanier College\!_Fall_2020\!_420-988-VA WEB DATABASE PROJECT\game-company\common" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Kate\Desktop\Vanier College\!_Fall_2020\!_420-988-VA WEB DATABASE PROJECT\game-company-git\!_old" />
       <recent name="C:\Users\Kate\Desktop\Vanier College\!_Fall_2020\!_420-988-VA WEB DATABASE PROJECT\game-company" />
       <recent name="C:\Users\Kate\Desktop\Vanier College\!_Fall_2020\!_420-988-VA WEB DATABASE PROJECT\game-company\common" />
     </key>
@@ -73,12 +104,23 @@
       <workItem from="1606407471717" duration="59806000" />
       <workItem from="1606538229985" duration="130571000" />
       <workItem from="1607016302753" duration="46406000" />
-      <workItem from="1607146942191" duration="3951000" />
+      <workItem from="1607146942191" duration="19288000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="507" y="73" key="#PHP" timestamp="1606335861811">
@@ -97,22 +139,22 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1607147527816" />
-    <state width="1069" height="251" key="GridCell.Tab.0.bottom" timestamp="1607140010722">
+    <state width="1069" height="15" key="GridCell.Tab.0.bottom" timestamp="1607237598059">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="251" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1607140010722" />
-    <state width="1069" height="251" key="GridCell.Tab.0.center" timestamp="1607140010722">
+    <state width="1069" height="15" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1607237598059" />
+    <state width="1069" height="15" key="GridCell.Tab.0.center" timestamp="1607237598058">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="251" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1607140010722" />
-    <state width="1069" height="251" key="GridCell.Tab.0.left" timestamp="1607140010722">
+    <state width="1069" height="15" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1607237598058" />
+    <state width="1069" height="15" key="GridCell.Tab.0.left" timestamp="1607237598057">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="251" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1607140010722" />
-    <state width="1069" height="251" key="GridCell.Tab.0.right" timestamp="1607140010722">
+    <state width="1069" height="15" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1607237598057" />
+    <state width="1069" height="15" key="GridCell.Tab.0.right" timestamp="1607237598058">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="251" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1607140010722" />
+    <state width="1069" height="15" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1607237598058" />
     <state x="631" y="463" key="NewPhpFileDialog" timestamp="1607027675941">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

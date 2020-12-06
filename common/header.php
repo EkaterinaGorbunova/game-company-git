@@ -11,7 +11,7 @@ if (!isset($title))
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <header>
+<!--    <header>-->
         <nav class="nav">
             <img src="./img/martov-transparent-background.png" width="250px" height="80px">
             <ul class="menu">
@@ -30,20 +30,20 @@ if (!isset($title))
                         while ($row = $result->fetch_assoc()) {
                             foreach ($row as $col) {
                                 if ($col == $row['id']) {
-                                    $id = $row['id'];
+                                    $submenu_id = $row['id'];
                                 }
                                 if ($col == $row['gamename']) {
-                                    $gamename = $row['gamename'];
+                                    $submenu_gamename = $row['gamename'];
                                 }
                             }
-                            echo "<li class='submenu-item'><a href='game_page.php?id=$id'>$gamename</a></li><br>";
+                            echo "<li class='submenu-item'><a href='game_page.php?id=$submenu_id'>$submenu_gamename</a></li><br>";
                         }
                     }
                     $conn->close();
                     ?>
                     </ul>
                 </li>
-                <li class="menu-item"><a href="#">ABOUT</a></li>
+                <li class="menu-item"><a href="about.php">ABOUT</a></li>
                 <?php if (!isset($_SESSION["name"])) {?>
                     <li class="menu-item"><a href="login.php">LOGIN
                             <i class="fa fa-fw fa-user" style="font-size:18px"></i></a></li>
@@ -61,4 +61,4 @@ if (!isset($title))
                 <?php } ?>
 
         </nav>
-    </header>
+<!--    </header>-->

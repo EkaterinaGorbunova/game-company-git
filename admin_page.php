@@ -6,38 +6,13 @@ if (!isset($_SESSION["token"])) {
 if ($_SESSION["name"] == "admin") {
 
 require_once "./common/functions_defs.php";
+$title = "Admin page";
+require_once "./common/header.php";
 ?>
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Admin</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
 
-<body class="admin-body">
-    <nav class="nav">
-        <img src="img/martov-transparent-background.png" width="250px" height="80px">
-        <ul class="menu">
 
-            <li class="menu-item"><a href="index.php">HOME</a></li>
-            <li class="menu-item"><a href="vr_games.php">VR GAMES</a>
-                <ul class="submenu">
-                    <li class="submenu-item"><a href="chiaro.php">CHIARO</a></li><br>
-                    <li class="submenu-item"><a href="forged.php">FORGED</a></li>
-                </ul>
-            </li>
-            <li class="menu-item"><a href="#">ABOUT</a></li>
-            <li class="menu-item"><a href="log_out.php">LOG OUT</a></li>
-            <li class="menu-item"><a href="shopping_cart.php">CART
-                    <i class="fa fa-shopping-cart" style="font-size:18px"></i></a></li>
-            <li class="menu-item"><a href="admin_page.php">ADMIN
-                    <i class="fa fa-fw fa-user" style="font-size:18px"></i></a></li>
 
-        </ul>
-    </nav>
-<main class="admin-main">
+<main class="admin-body admin-main">
     <div align="center" style='padding-top: 20px'>
         <h2 style='color: white'>VR Games</h2>
 
@@ -73,12 +48,11 @@ require_once "./common/functions_defs.php";
                         ?>
                         <form action="game_delete.php" method="post">
                             <?php echo "<td><input type='submit' value='Delete' name='delete_command'/>";?>
-
                             <?php echo "<input type='hidden' value=$game_id name='game_id'/>";?>
                         </form>
                         <form action="game_edit.php" method="post">
-                            <input type="hidden" name="title" value="<?php echo $row['gamename'] ?>"/>
                             <?php echo "<input type='submit' value='Edit' name='edit_command'/></td>"; ?>
+                            <?php echo "<input type='hidden' value=$game_id name='game_id'/>";?>
                         </form>
                         <?php echo "</tr>";
                     }
@@ -87,7 +61,7 @@ require_once "./common/functions_defs.php";
                 echo "0 result";
             }
         } else {
-            // prepare the statement and bind the $id variable to the ?
+            // prepare the statement and bind the $id variable
             $stmt = $conn->prepare("SELECT id, image, gamename, subtitle, description, price FROM vr_games WHERE id = ?");
             $stmt->bind_param("i", $id);
 
@@ -118,75 +92,91 @@ require_once "./common/functions_defs.php";
     </div>
 
     <?php
-        $gamename = $subtitle = $description = $price = $gamename_error = "";
-
+        $gamename = $subtitle = $description = $price = $gamename_error = $reload_page = "";
+        $size_error = $extension_error = $upload_error = "";
         if($_SERVER["REQUEST_METHOD"] == "POST") {
             validate_gamename($gamename, $gamename_error);
             if (!isset($_POST['token']) || !hash_equals($_SESSION['token'], $_POST['token'])) {
-            $token_error = "Error: Cannot process the form. CSRF tokens do not match.";
+                $token_error = "Error: Cannot process the form. CSRF tokens do not match.";
             } elseif($gamename_error == "") {
-            $target_dir = "./img/";
-            $target_file = $target_dir . basename($_FILES["file"]["name"]);
-            $uploadOk = 1;
-            $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+                $target_dir = "./img/";
+                $target_file = $target_dir . basename($_FILES["file"]["name"]);
+                $uploadOk = 1;
+                $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 
-            // Check if file already exists
+                // Check if file already exists
 
-            if (file_exists($target_file)) {
-                echo "Error: This file already exists. Please, upload another. ";
-                $uploadOk = 0;
-            }
-            // Check file size
+//                if (file_exists($target_file)) {
+//                    echo "Error: This file already exists. Please, upload another. ";
+//                    $uploadOk = 0;
+//                }
+                // Check file size
 
-            if ($_FILES["file"]["size"] > 1000000) {
-                echo "Your file is too big. Please, try again. ";
-                $uploadOk = 0;
-            }
-
-            // Allow certain file formats
-
-            if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-                && $imageFileType != "gif") {
-                echo "Only JPG, JPEG, PNG and GIF files are allowed. Please try again. ";
-                $uploadOk = 0;
-            }
-
-            // Check if $uploadOk is set to 0 by an error
-
-            if ($uploadOk == 0) {
-                echo "Your file was not uploaded. ";
-            } else {
-                if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-                    echo "The file " . basename($_FILES["file"]["name"]) . " has been uploaded.";
-                } else {
-                    echo "There was an error uploading your file. ";
+                if ($_FILES["file"]["size"] > 10000000) {
+                    $size_error = "Your file is too big. Please, try again.";
+//                    echo "Your file is too big. Please, try again.";
+                    $uploadOk = 0;
                 }
-            }
 
-            // Read from db
+                // Allow certain file formats
 
-            $conn = get_introdb_conn();
-            if ($conn->connect_error) {
-                die("Error: Connection failed: " . $conn->connect_error);
-            }   else {
-                if (db_find_gamename($conn, $gamename)) { // game already exist?
-                    $gamename_error = "Error: Game with this name already exists!";
-                } else {
-                    $subtitle = clean_data($_POST["subtitle"]);
-                    $description = clean_data($_POST["description"]);
-                    $price = clean_data($_POST["price"]);
-                     if (insert_new_game($conn, $target_file, $gamename, $subtitle, $description, $price)) {
-                         $game_error = "Error: Failed to add new game to DB";
-                     } else {
-                         header("Refresh:0");
-                     }
+                if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+                    && $imageFileType != "gif") {
+                    $extension_error = "Only JPG, JPEG, PNG and GIF files are allowed. Please try again.";
+//                    echo "Only JPG, JPEG, PNG and GIF files are allowed. Please try again.";
+                    $uploadOk = 0;
                 }
-                $conn->close();
 
-            }
+                // Check if $uploadOk is set to 0 by an error
+
+                if ($uploadOk == 0) {
+//                    echo "Your file was not uploaded due to above error. New game was not added.";
+                    $upload_error = "Your file was not uploaded due to above error. New game was not added.";
+                } else {
+                    if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+                        echo "The file " . basename($_FILES["file"]["name"]) . " has been uploaded.";
+
+                        // Read from db
+                        $conn = get_introdb_conn();
+                        if ($conn->connect_error) {
+                            die("Error: Connection failed: " . $conn->connect_error);
+                        } else {
+                            if (db_find_gamename($conn, $gamename)) { // game already exist?
+                                $gamename_error = "Error: Game with this name already exists!";
+                            } else {
+                                $subtitle = clean_data($_POST["subtitle"]);
+                                $description = clean_data($_POST["description"]);
+                                $price = clean_data($_POST["price"]);
+                                if (insert_new_game($conn, $target_file, $gamename, $subtitle, $description, $price)) {
+                                    $game_error = "Error: Failed to add new game to DB.";
+//                                    echo "Error: Failed to add new game to DB.\n";
+                                } else {
+//                                    echo"REFRESHING PAGE....";
+//                                    header("Refresh:0");
+                                      $reload_page = "yes";
+//                                    header("Refresh:0; url=admin_page.php");
+//                                    header("Location: admin_page.php");
+                                }
+                            }
+                            $conn->close();
+                            if ($reload_page){
+                                echo "<meta http-equiv=\"refresh\" content=\"0;URL=admin_page.php\">";
+                            }
+
+                        }
+
+                    }
+                    else {
+                        echo "There was an error uploading your file. New game was not added.";
+                    }
+                }
+
+
         }
     }
     ?>
+
+
 
     <div  class="form-add-game-admin">
         <h2 style='color: white' align="center">Add new VR game</h2>
@@ -205,9 +195,45 @@ require_once "./common/functions_defs.php";
             <button type="submit" class="btn btn-primary btn-large">Add a new game</button>
             <input type="hidden" name="token" value="<?php echo $_SESSION["token"] ?>"/>
         </form>
+    </div>
 
-        <span class="error"><?php echo $gamename_error; ?></span>
-        <span class="error"><?php echo $token_error; ?></span>
+
+    <div align="center">
+        <?php
+        if ($gamename_error) { ?>
+            <span class="error"><?php echo $gamename_error; ?></span><br>
+        <?php
+        }
+        ?>
+
+        <?php
+        if ($token_error) { ?>
+            <span class="error"><?php echo $token_error; ?></span><br>
+        <?php
+        }
+        ?>
+
+        <?php
+        if ($size_error) { ?>
+            <span class="error"><?php echo $size_error; ?></span><br>
+        <?php
+        }
+        ?>
+
+        <?php
+        if ($extension_error) { ?>
+           <span class="error"><?php echo $extension_error; ?></span><br>
+        <?php
+        }
+        ?>
+
+        <?php
+        if ($upload_error) { ?>
+            <span class="error"><?php echo $upload_error; ?></span><br>
+        <?php
+        }
+        ?>
+
     </div>
 </main>
 
