@@ -142,8 +142,8 @@ function delete_game($conn, $game_id) {
 }
 
 function update_game($conn, $id, $target_file, $gamename, $subtitle, $description, $price ) {
-    $stmt = $conn->prepare("UPDATE vr_games SET image='$target_file', gamename='$gamename', subtitle='$subtitle', description='$description', price='$price' WHERE id= ?");
-    $stmt->bind_param("sssss", $target_file, $gamename, $subtitle, $description, $price, $id );
+    $stmt = $conn->prepare("UPDATE vr_games SET image=?, gamename=?, subtitle=?, description=?, price=? WHERE id= ?");
+    $stmt->bind_param("sssssi", $target_file, $gamename, $subtitle, $description, $price, $id );
     if (!$stmt->execute()) {
         return $stmt->error;
     } else {
