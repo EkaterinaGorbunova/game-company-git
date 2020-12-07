@@ -113,9 +113,9 @@ if ($_SESSION["name"] == "admin")
                         if ($conn->connect_error) {
                             die("Error: Connection failed: " . $conn->connect_error);
                         } else {
-                            if (db_find_gamename($conn, $gamename)) { // game already exist?
-                                $gamename_error = "Error: Game with this name already exists!";
-                            } else {
+//                            if (db_find_gamename($conn, $gamename)) { // game already exist?
+//                                $gamename_error = "Error: Game with this name already exists!";
+//                            } else {
 
                                 $subtitle = clean_data($_POST["subtitle"]);
                                 $description = clean_data($_POST["description"]);
@@ -151,7 +151,7 @@ if ($_SESSION["name"] == "admin")
     //                                }
     //                            }
 
-                            }
+//                            }
                             $conn->close();
                             echo "<meta http-equiv=\"refresh\" content=\"0;URL=admin_page.php\">";
 
@@ -172,7 +172,7 @@ if ($_SESSION["name"] == "admin")
 
 
 
-    <main class="login-main">
+    <main class="login-main admin-body">
 
     <?php if (!isset($_POST['updating_game'])) { ?>
         <div  class="form-add-game-admin">

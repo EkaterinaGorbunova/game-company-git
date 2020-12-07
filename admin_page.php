@@ -10,8 +10,6 @@ $title = "Admin page";
 require_once "./common/header.php";
 ?>
 
-
-
 <main class="admin-body admin-main">
     <div align="center" style='padding-top: 20px'>
         <h2 style='color: white'>VR Games</h2>
@@ -67,14 +65,10 @@ require_once "./common/header.php";
 
             // assign a value to $id and execute the statement
             $id = clean_data($_GET["id"]);
-            // the SQL statement has already been parsed, so no worries about the value to $
-            // but it is better to clean the data anyway
-            // without prepared statement, even after cleaning data, the query could be parsed
             $stmt->execute();
             $result = $stmt->get_result();
 
             if ($result->num_rows > 0) {
-            // if you expect only 1 result, don't loop, just get the only row
             $row = $result->fetch_row();
             echo "<p><strong>ID</strong>: $row[0]</p>";
             echo "<p><strong>Image</strong>: $row[1]</p>";
@@ -104,17 +98,10 @@ require_once "./common/header.php";
                 $uploadOk = 1;
                 $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 
-                // Check if file already exists
-
-//                if (file_exists($target_file)) {
-//                    echo "Error: This file already exists. Please, upload another. ";
-//                    $uploadOk = 0;
-//                }
                 // Check file size
 
                 if ($_FILES["file"]["size"] > 10000000) {
                     $size_error = "Your file is too big. Please, try again.";
-//                    echo "Your file is too big. Please, try again.";
                     $uploadOk = 0;
                 }
 
@@ -123,14 +110,12 @@ require_once "./common/header.php";
                 if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
                     && $imageFileType != "gif") {
                     $extension_error = "Only JPG, JPEG, PNG and GIF files are allowed. Please try again.";
-//                    echo "Only JPG, JPEG, PNG and GIF files are allowed. Please try again.";
                     $uploadOk = 0;
                 }
 
                 // Check if $uploadOk is set to 0 by an error
 
                 if ($uploadOk == 0) {
-//                    echo "Your file was not uploaded due to above error. New game was not added.";
                     $upload_error = "Your file was not uploaded due to above error. New game was not added.";
                 } else {
                     if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
@@ -149,13 +134,8 @@ require_once "./common/header.php";
                                 $price = clean_data($_POST["price"]);
                                 if (insert_new_game($conn, $target_file, $gamename, $subtitle, $description, $price)) {
                                     $game_error = "Error: Failed to add new game to DB.";
-//                                    echo "Error: Failed to add new game to DB.\n";
                                 } else {
-//                                    echo"REFRESHING PAGE....";
-//                                    header("Refresh:0");
                                       $reload_page = "yes";
-//                                    header("Refresh:0; url=admin_page.php");
-//                                    header("Location: admin_page.php");
                                 }
                             }
                             $conn->close();
