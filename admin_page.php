@@ -156,8 +156,6 @@ require_once "./common/header.php";
     }
     ?>
 
-
-
     <div  class="form-add-game-admin">
         <h2 style='color: white' align="center">Add new VR game</h2>
 

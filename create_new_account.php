@@ -4,30 +4,11 @@ if (!isset($_SESSION["token"])) {
     $_SESSION["token"] = bin2hex(random_bytes(24));
 }
 require_once "./common/functions_defs.php";
+$title = "Registration";
+require_once "./common/header.php";
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>create_new_account</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
 
-<body>
-    <nav class="nav">
-        <img src="img/martov-transparent-background.png" width="250px" height="80px">
-        <ul class="menu">
-            <li class="menu-item"><a href="index.php">HOME</a></li>
-            <li class="menu-item"><a href="vr_games.php">VR GAMES</a>
-                <ul class="submenu">
-                    <li class="submenu-item"><a href="!_old/chiaro.php">CHIARO</a></li><br>
-                    <li class="submenu-item"><a href="!_old/forged.php">FORGED</a></li>
-                </ul>
-            </li>
-            <li class="menu-item"><a href="#">ABOUT</a></li>
-            <li class="menu-item"><a href="login.php">LOGIN
-                    <i class="fa fa-fw fa-user" style="font-size:18px"></i></a></li>
 
             <?php
             $username = $password1 = $password2 = $email = "";
@@ -63,24 +44,24 @@ require_once "./common/functions_defs.php";
                         $db_error = "Error: Connection failed " . $conn->connect_error;
                         $conn->close();
                     } else {
-                        print_r("Error: Connection established without errors");
+//                        print_r("Error: Connection established without errors");
                         $hash = db_find_hash($conn, $username);
                         if ($hash) { // user already exist?
                             $register_error = "This user name already exists!";
                         } else {
-                            print_r("Error: No existing hash found");
+//                            print_r("Error: No existing hash found");
                             $options = ['cost' => 12,];
                             $hash = password_hash($password1, PASSWORD_BCRYPT, $options);
                             if (insert_user($conn, $username, $hash, $email)) {
                                 $register_error = "Error: Can not create this user";
-                                print_r("Error: insert_user returned error");
+//                                print_r("Error: insert_user returned error");
                             } else {
-                                print_r("Error: insert_user did not receive any error");
+//                                print_r("Error: insert_user did not receive any error");
                                 ?>
-                                </ul>
+
                                 <?php
                                  echo "<h1 class='login-h1'>Congratulations $username,<br>you have successfully registered!<br></h1>";
-                                print_r($_SESSION);
+//                                print_r($_SESSION);
                             }
                         }
                     }
@@ -108,7 +89,7 @@ require_once "./common/functions_defs.php";
 //                    }
 
         ?>
-    </nav>
+
     <main class="login-main">
         <?php
         if ($username_error
@@ -136,7 +117,7 @@ require_once "./common/functions_defs.php";
                     <span class="error"><?php echo $register_error; ?></span>
                     <span class="error"><?php echo $token_error; ?></span>
             <?php
-            print_r($_SESSION);
+//            print_r($_SESSION);
             }
             ?>
         </div>
