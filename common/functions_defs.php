@@ -18,14 +18,6 @@ function validate_name(&$name, &$name_error) {
     }
     else {
         $name = clean_data($_POST["name"]);
-//        setcookie("name", $name, time() + 60, "/");
-//        session_start(['cookie_lifetime' => 60,]) or die("Cannot start the session. Are cookies ends");
-
-//        header("Location: username_cookies.php");
-        // check if name only contains letters and whitespace
-//        if (!preg_match("/^[a-zA-Z-_]*$/", $name)) {
-//            $name_error = "Error: only letters, numbers, space and underscore";
-//        }
     }
 }
 
@@ -52,32 +44,6 @@ function validate_username(&$username, &$username_error) {
         $username = clean_data($_POST["username"]);
     }
 }
-
-//function echo_table($result)
-//{
-//    echo "<table class='table-games'><tbody><tr>";
-//    foreach ($result->fetch_fields() as $field) {
-//        echo "<th>{$field->name}</th>";
-//    }
-//    echo "</tr>";
-//    while ($row = $result->fetch_assoc()) {
-//        echo "<tr>";
-//        foreach ($row as $col) {
-//            if ($col == $row['image']) {
-//                echo "<td><img src=$col></td>";
-//            } else {
-//                echo "<td>$col</td>";
-//            }
-//        }
-//        ?>
-<!--        <form action="delete_game.php">-->
-<!--        --><?php //echo "<td><input type='submit' value='Delete' name='delete_command'/>
-//                    <input type='submit' value='Edit' name='edit_command'/></td>"; ?>
-<!--        </form>-->
-<!--        --><?php //echo "</tr>";
-//    }
-//    echo "</tbody></table>";
-//}
 
 function find_hash($username) {
     $password_file = fopen("passwords.csv", "r") or die ("find_hash - Unable to open file passwords.csv");
@@ -174,10 +140,3 @@ function db_find_gamename($conn, $gamename) {
         return "";
     }
 }
-
-
-
-
-
-
-

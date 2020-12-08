@@ -8,87 +8,59 @@ $title = "Registration";
 require_once "./common/header.php";
 ?>
 
+<?php
+$username = $password1 = $password2 = $email = "";
+$username_error = $password1_error = $password2_error = $email_error = $register_error = $token_error = "";
 
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+    $password1 = clean_data($_POST["password1"]);
+    $password2 = clean_data($_POST["password2"]);
+    validate_username($username, $username_error);
+    validate_email($email, $email_error);
 
-            <?php
-            $username = $password1 = $password2 = $email = "";
-            $username_error = $password1_error = $password2_error = $email_error = $register_error = $token_error = "";
+    if(!isset($_POST['token']) || !hash_equals($_SESSION['token'], $_POST['token'])) {
+        $token_error = "Error: Cannot process the form. CSRF tokens do not match";
+    }
 
-            if($_SERVER["REQUEST_METHOD"] == "POST") {
-                $password1 = clean_data($_POST["password1"]);
-                $password2 = clean_data($_POST["password2"]);
-                validate_username($username, $username_error);
-                validate_email($email, $email_error);
+    elseif (empty(trim($_POST["password1"]))) {
+        $password1_error = "Error: no password provided";
+    }
+    elseif (empty(trim($_POST["password2"]))) {
+        $password2_error = "Error: no password provided";
+    }
+    elseif ($password1 != $password2) {
+        $register_error = "Error: The two passwords do not match";
+    }
 
-                if(!isset($_POST['token']) || !hash_equals($_SESSION['token'], $_POST['token'])) {
-                    $token_error = "Error: Cannot process the form. CSRF tokens do not match";
-                }
+    elseif($username_error == "" && $password1_error == ""
+        && $password2_error == "" && $email_error == "" && $token_error == "") {
 
-                elseif (empty(trim($_POST["password1"]))) {
-                    $password1_error = "Error: no password provided";
-                }
-                elseif (empty(trim($_POST["password2"]))) {
-                    $password2_error = "Error: no password provided";
-                }
-                elseif ($password1 != $password2) {
-                    $register_error = "Error: The two passwords do not match";
-                }
+        /* read from db */
+        $conn = get_introdb_conn();
+        if ($conn->connect_error) {
+            $db_error = "Error: Connection failed " . $conn->connect_error;
+            $conn->close();
+        } else {
+            $hash = db_find_hash($conn, $username);
+            if ($hash) { // user already exist?
+                $register_error = "This user name already exists!";
+            } else {
+                $options = ['cost' => 12,];
+                $hash = password_hash($password1, PASSWORD_BCRYPT, $options);
+                if (insert_user($conn, $username, $hash, $email)) {
+                    $register_error = "Error: Can not create this user";
+                } else {
+                    ?>
 
-                elseif($username_error == "" && $password1_error == ""
-                    && $password2_error == "" && $email_error == "" && $token_error == "") {
-//                    $username = clean_data($_POST["username"]);
-
-                    /* read from db */
-                    $conn = get_introdb_conn();
-                    if ($conn->connect_error) {
-                        $db_error = "Error: Connection failed " . $conn->connect_error;
-                        $conn->close();
-                    } else {
-//                        print_r("Error: Connection established without errors");
-                        $hash = db_find_hash($conn, $username);
-                        if ($hash) { // user already exist?
-                            $register_error = "This user name already exists!";
-                        } else {
-//                            print_r("Error: No existing hash found");
-                            $options = ['cost' => 12,];
-                            $hash = password_hash($password1, PASSWORD_BCRYPT, $options);
-                            if (insert_user($conn, $username, $hash, $email)) {
-                                $register_error = "Error: Can not create this user";
-//                                print_r("Error: insert_user returned error");
-                            } else {
-//                                print_r("Error: insert_user did not receive any error");
-                                ?>
-
-                                <?php
-                                 echo "<h1 class='login-h1'>Congratulations $username,<br>you have successfully registered!<br></h1>";
-//                                print_r($_SESSION);
-                            }
-                        }
-                    }
+                    <?php
+                     echo "<h1 class='login-h1'>Congratulations $username,<br>you have successfully registered!<br></h1>";
                 }
             }
-                                /* read from file */
-//                    $hash = find_hash($username);
-//                    if ($hash) { // user already exist?
-//                        $register_error = "This user name already exists!";
-//                    } else {
-//                        $options = ['cost' => 12,];
-//                        $hash = password_hash($password1, PASSWORD_BCRYPT, $options);
-//
-//                        $passwords_file = fopen("passwords.csv", "a") or die ("Adding_user - unable to open file passwords.csv!");
-//                        fputcsv($passwords_file, array($username, $hash, $email));
-//                        fclose($passwords_file);
-//
-//
-//                    ?>
-<!---->
-<!--                    </ul>-->
-<!---->
-<!--                    --><?php //echo "<h1 class='login-h1'>Congratulations $username,<br>you have successfully registered!<br></h1>";
-//                    print_r($_SESSION);
-//                    }
+        }
+    }
+}
 
-        ?>
+?>
 
     <main class="login-main">
         <?php
@@ -117,7 +89,6 @@ require_once "./common/header.php";
                     <span class="error"><?php echo $register_error; ?></span>
                     <span class="error"><?php echo $token_error; ?></span>
             <?php
-//            print_r($_SESSION);
             }
             ?>
         </div>

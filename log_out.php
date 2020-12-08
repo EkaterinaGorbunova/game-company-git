@@ -5,26 +5,26 @@ $title = "Log out";
 require_once "./common/header.php";
 ?>
 
-<main class="logout-main">
-    <?php
+    <main class="logout-main">
+        <?php
 
-    if(isset($_SESSION["name"])) {
-        $logged_user = "yes";
-    }
-    else{
-        $logged_user = "";
-    }
+        if(isset($_SESSION["name"])) {
+            $logged_user = "yes";
+        }
+        else{
+            $logged_user = "";
+        }
 
-    session_unset();
-    session_destroy();
+        session_unset();
+        session_destroy();
 
-    if ($logged_user){
-        header("Refresh:0");
-    }
-    echo"<h1 class='login-h1'>You've been logged out!</h1>";
-    ?>
+        if ($logged_user){
+            header("Refresh:0");
+        }
+        echo"<h1 class='login-h1'>You've been logged out!</h1>";
+        ?>
+    </main>
 
-</main>
 <?php
 require_once "./common/footer.php";
 ?>

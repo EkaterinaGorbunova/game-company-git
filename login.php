@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-$title = "Log in";
+$title = "Login";
 require_once "./common/header.php";
 ?>
 
@@ -65,10 +65,8 @@ require_once "./common/header.php";
                     <?php
                 }
                 ?>
-
         </div>
     </main>
-
 
 <?php
 require_once "./common/footer.php";

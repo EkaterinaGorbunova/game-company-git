@@ -1,5 +1,4 @@
 <?php
-
 session_start(['cookie_lifetime' => 24 * 60 * 60,]) or die("Cannot start the session. Are cookies  enable?");
 if (!isset($_SESSION["token"])) {
     $_SESSION["token"] = bin2hex(random_bytes(24));
@@ -7,8 +6,6 @@ if (!isset($_SESSION["token"])) {
 require_once "./common/functions_defs.php";
 
 $id = $_POST['game_id'];
-//print_r("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-//print_r($id);
 
 if ($_SESSION["name"] == "admin")
 {
@@ -23,7 +20,6 @@ if ($_SESSION["name"] == "admin")
         $stmt->bind_param("i", $id);
         $stmt->execute();
         $result = $stmt->get_result();
-        //print_r($result);
         if ($result->num_rows > 0)
         {
             $image = $gamename = $title = $subtitle = $description = $price = "";
@@ -36,7 +32,6 @@ if ($_SESSION["name"] == "admin")
                     if ($col == $row['gamename'])
                     {
                         $gamename = $row['gamename'];
-        //                print_r($gamename);
                     }
                     if ($col == $row['subtitle'])
                     {
@@ -54,14 +49,10 @@ if ($_SESSION["name"] == "admin")
             }
         }
     }
-
     $title = "Edit game - $gamename";
     require_once "./common/header.php";
 
     if (isset($_POST['updating_game'])) {
-//        print_r($_POST);
-//        print_r($id);
-    //    $gamename = $subtitle = $description = $price = $gamename_error = $reload_page = "";
         $gamename_error = "";
         $size_error = $extension_error = $upload_error = $game_update_error = "";
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -75,17 +66,11 @@ if ($_SESSION["name"] == "admin")
                 $uploadOk = 1;
                 $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 
-                // Check if file already exists
-
-    //                if (file_exists($target_file)) {
-    //                    echo "Error: This file already exists. Please, upload another. ";
-    //                    $uploadOk = 0;
-    //                }
                 // Check file size
 
                 if ($_FILES["file"]["size"] > 10000000) {
                     $size_error = "Your file is too big. Please, try again.";
-    //                    echo "Your file is too big. Please, try again.";
+
                     $uploadOk = 0;
                 }
 
@@ -94,14 +79,12 @@ if ($_SESSION["name"] == "admin")
                 if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
                     && $imageFileType != "gif") {
                     $extension_error = "Only JPG, JPEG, PNG and GIF files are allowed. Please try again.";
-    //                    echo "Only JPG, JPEG, PNG and GIF files are allowed. Please try again.";
                     $uploadOk = 0;
                 }
 
                 // Check if $uploadOk is set to 0 by an error
 
                 if ($uploadOk == 0) {
-    //                    echo "Your file was not uploaded due to above error. New game was not added.";
                     $upload_error = "Your file was not uploaded due to above error. New game was not added.";
                 } else {
                     if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
@@ -113,45 +96,13 @@ if ($_SESSION["name"] == "admin")
                         if ($conn->connect_error) {
                             die("Error: Connection failed: " . $conn->connect_error);
                         } else {
-//                            if (db_find_gamename($conn, $gamename)) { // game already exist?
-//                                $gamename_error = "Error: Game with this name already exists!";
-//                            } else {
-
-                                $subtitle = clean_data($_POST["subtitle"]);
-                                $description = clean_data($_POST["description"]);
-                                $price = clean_data($_POST["price"]);
-                                $id = clean_data($_POST["id"]);
-//                                print_r("GOT TO LINE 123");
-//                                print_r($id);
-//                                print_r($target_file);
-//                                print_r($gamename);
-//                                print_r($subtitle);
-//                                print_r($description);
-//                                print_r($price);
-                                if (update_game($conn, $id, $target_file, $gamename, $subtitle, $description, $price )) {
-                                    $game_update_error = "Error: Game was not updated.";
-                                }
-
-
-
-    //                            if (delete_game($conn, $id)) {
-    //                                $game_delete_error = "Error: Failed to delete game from DB";
-    //                                ?><!--<span class="error">--><?php //echo $game_delete_error; ?><!--</span>--><?php
-    //                            }
-    //                            else {
-    //                                if (insert_new_game($conn, $target_file, $gamename, $subtitle, $description, $price)) {
-    //                                    $game_error = "Error: Failed to add new game to DB.";
-    //                                    //                                    echo "Error: Failed to add new game to DB.\n";
-    //                                } else {
-    //                                    //                                    echo"REFRESHING PAGE....";
-    //                                    //                                    header("Refresh:0");
-    //                                    $reload_page = "yes";
-    //                                    //                                    header("Refresh:0; url=admin_page.php");
-    //                                    //                                    header("Location: admin_page.php");
-    //                                }
-    //                            }
-
-//                            }
+                            $subtitle = clean_data($_POST["subtitle"]);
+                            $description = clean_data($_POST["description"]);
+                            $price = clean_data($_POST["price"]);
+                            $id = clean_data($_POST["id"]);
+                            if (update_game($conn, $id, $target_file, $gamename, $subtitle, $description, $price )) {
+                                $game_update_error = "Error: Game was not updated.";
+                            }
                             $conn->close();
                             echo "<meta http-equiv=\"refresh\" content=\"0;URL=admin_page.php\">";
 
@@ -161,16 +112,10 @@ if ($_SESSION["name"] == "admin")
                         echo "There was an error uploading your file. New game was not added.";
                     }
                 }
-
-
             }
         }
     }
     ?>
-
-
-
-
 
     <main class="login-main admin-body">
 
@@ -229,16 +174,8 @@ if ($_SESSION["name"] == "admin")
                 <span class="error"><?php echo $game_update_error; ?></span><br>
                 <?php
             }
-
-//            if (!$gamename_error && !$token_error && !$size_error && !$extension_error && !$upload_error && !$game_update_error){
-//                header("Location: admin_page.php");
-//            }
             ?>
-
-
-
         </div>
-
     </main>
 
     <?php

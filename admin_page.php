@@ -119,7 +119,7 @@ require_once "./common/header.php";
                     $upload_error = "Your file was not uploaded due to above error. New game was not added.";
                 } else {
                     if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-                        echo "The file " . basename($_FILES["file"]["name"]) . " has been uploaded.";
+//                        echo "The file " . basename($_FILES["file"]["name"]) . " has been uploaded.";
 
                         // Read from db
                         $conn = get_introdb_conn();
