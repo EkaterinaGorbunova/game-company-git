@@ -64,6 +64,7 @@ Log in using admin/admin to manage website's content.
 #### 4. List of implemented features (implemented within 3 weeks)
 
 - all data stored in DB;
+- cookies, session, tokens;
 - create new user account;
 - log in;
 - log out;
