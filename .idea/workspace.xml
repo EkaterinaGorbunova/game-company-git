@@ -20,32 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="539cd656-44f3-4cba-bd42-ae984d91d462" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/!_old/background-test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/!_old/contact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/!_old/game_upload.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/!_old/login.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/!_old/name2.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/!_old/name_action2.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/!_old/passwords.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/!_old/vr_games.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_page.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/functions_defs.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/functions_defs.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_new_account.php" beforeDir="false" afterPath="$PROJECT_DIR$/create_new_account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_vr_games.sql" beforeDir="false" afterPath="$PROJECT_DIR$/create_vr_games.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/game_delete.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game_edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/game_edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/bg-contact.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log_out.php" beforeDir="false" afterPath="$PROJECT_DIR$/log_out.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping_cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/shopping_cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploaded_files/chiaro.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploaded_files/chiaro2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploaded_files/marc-andre-bouchard-7-char-dekarian-berserker.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vr_games.php" beforeDir="false" afterPath="$PROJECT_DIR$/vr_games.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/common/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,16 +58,17 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/PhpstormProjects/IntroPHP" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Kate\Desktop\Vanier College\!_Fall_2020\!_420-988-VA WEB DATABASE PROJECT\game-company-git\common" />
+      <recent name="C:\Users\Kate\Desktop\Vanier College\!_Fall_2020\!_420-988-VA WEB DATABASE PROJECT\game-company-git\!_old" />
       <recent name="C:\Users\Kate\Desktop\Vanier College\!_Fall_2020\!_420-988-VA WEB DATABASE PROJECT\game-company" />
       <recent name="C:\Users\Kate\Desktop\Vanier College\!_Fall_2020\!_420-988-VA WEB DATABASE PROJECT\game-company\common" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Kate\Desktop\Vanier College\!_Fall_2020\!_420-988-VA WEB DATABASE PROJECT\game-company-git\!_old" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Kate\Desktop\Vanier College\!_Fall_2020\!_420-988-VA WEB DATABASE PROJECT\game-company" />
       <recent name="C:\Users\Kate\Desktop\Vanier College\!_Fall_2020\!_420-988-VA WEB DATABASE PROJECT\game-company\common" />
     </key>
@@ -123,6 +105,9 @@
       <workItem from="1607016302753" duration="46406000" />
       <workItem from="1607146942191" duration="34052000" />
       <workItem from="1607351833140" duration="6184000" />
+      <workItem from="1607540917979" duration="11508000" />
+      <workItem from="1607566897511" duration="7591000" />
+      <workItem from="1607654757511" duration="4038000" />
     </task>
     <servers />
   </component>
@@ -154,10 +139,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="400" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1606760766976" />
-    <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1607147527816">
+    <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1607541017094">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1607147527816" />
+    <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1607541017094" />
     <state width="1557" height="103" key="GridCell.Tab.0.bottom" timestamp="1607322407751">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

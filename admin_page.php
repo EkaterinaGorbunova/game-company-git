@@ -11,7 +11,7 @@ require_once "./common/header.php";
 ?>
 
 <main class="admin-body admin-main">
-    <div align="center" style='padding-top: 20px'>
+    <div align="center" style='padding-top: 150px'>
         <h2 style='color: white'>VR Games</h2>
 
         <?php
@@ -160,14 +160,14 @@ require_once "./common/header.php";
         <h2 style='color: white' align="center">Add new VR game</h2>
 
         <form enctype="multipart/form-data" action="admin_page.php" method="post">
-            <h4>gamename:</h4> <input class="form-add-game-admin input" type="text" name="gamename" maxlength=50 required="required" />
+            <h4>gamename:</h4> <input class="form-add-game-admin input" type="text" name="gamename" maxlength=50 required="required" placeholder="Please, type gamename here..." />
             <h4>subtitle:</h4>
-            <textarea rows="5" cols="50" maxlength='150' name="subtitle" required="required" placeholder="Please, type your subtitle here..."></textarea>
+            <textarea rows="5" cols="50" maxlength='150' name="subtitle" required="required" placeholder="Please, type subtitle here..."></textarea>
             <h4>description:</h4>
-            <textarea rows="5" cols="50" maxlength='430' name="description" required="required" placeholder="Please, type your description here..."></textarea>
-            <h4>price</h4><input type="text" name="price" maxlength=20 required="required">
+            <textarea rows="5" cols="50" maxlength='430' name="description" required="required" placeholder="Please, type description here..."></textarea>
+            <h4>price (example: 99.99)</h4><input type="text" name="price" maxlength=20 required="required" placeholder="Please, type price here...">
 
-            <label for="file">Select file to upload :</label><br />
+            <label for="file"><h4>select file to upload (300x300px):</h4></label>
             <input name="file" required="required" type="file" id="file"/><br /><br />
 
             <button type="submit" class="btn btn-primary btn-large">Add a new game</button>

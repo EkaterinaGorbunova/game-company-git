@@ -124,14 +124,14 @@ if ($_SESSION["name"] == "admin")
             <h2 style='color: white' align="center">Editing game <?php echo $gamename ?></h2>
 
             <form enctype="multipart/form-data" action="game_edit.php" method="post">
-                <h4>gamename:</h4><input class="form-add-game-admin input" type="text" name="gamename" maxlength=50 required="required" value=<?php echo $gamename ?> >
+                <h4>gamename:</h4><input class="form-add-game-admin input" type="text" name="gamename" maxlength=50 required="required" placeholder="Please, type gamename here..." value=<?php echo $gamename ?> >
                 <h4>subtitle:</h4>
-                <textarea rows="5" cols="50" maxlength='150' name="subtitle" required="required"> <?php echo $subtitle ?> </textarea>
+                <textarea rows="5" cols="50" maxlength='150' name="subtitle" required="required" placeholder="Please, type subtitle here..."> <?php echo $subtitle ?> </textarea>
                 <h4>description:</h4>
-                <textarea rows="5" cols="50" maxlength='430' name="description" required="required"> <?php echo $description ?> </textarea>
-                <h4>price</h4><input type="text" name="price" maxlength=20 required="required" value=<?php echo $price ?> >
+                <textarea rows="5" cols="50" maxlength='430' name="description" required="required" placeholder="Please, type description here..."> <?php echo $description ?> </textarea>
+                <h4>price (example: 99.99)</h4><input type="text" name="price" maxlength=20 required="required" placeholder="Please, type your price here..."value=<?php echo $price ?> >
 
-                <label for="file">Select file to upload :</label><br />
+                <label for="file"><h4>select file to upload (300x300px):</h4></label>
                 <input name="file" required="required" type="file" id="file"/><br /><br />
 
                 <button type="submit" class="btn btn-primary btn-large">Update</button>
