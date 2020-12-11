@@ -57,3 +57,26 @@ function get_introdb_conn() {
 Install Web-server of your choice (Apache/Nginx) and upload provided files to it.
 Otherwise you can simply use IDE with embedded Web-server (like PhpStorm or similar).
 
+#### 3. Website administration
+
+Log in using admin/admin to manage website's content.
+
+#### 4. List of implemented features
+
+- all data stored in DB;
+- create new user account;
+- log in;
+- log out;
+- add new game (admin only);
+- edit game (admin only);
+- delete game (admin only);
+- re-usable header, footer and functions.
+
+#### 5. List of future features
+
+- shopping cart (currently static);
+- content of **About** page;
+- **Subscribe** section;
+- change password by user.
+
+
