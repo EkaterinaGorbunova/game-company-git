@@ -17,7 +17,7 @@ require_once "./common/header.php";
             <h1>VR GAME, FANTASY, ARTSTYLE</h1>
             <p class="p-heading p-large">Martov Co is a virtual reality studio based in Montreal Canada.<br> Our first experience is an adventure game called 'Chiaro and The Elixir Of Life'.</p>
             <form action="vr_games.php">
-                <a class="btn-solid-lg page-scroll" href="vr_games.php">GAMES</a>
+                <a class="btn-solid-lg page-scroll" href="vr_games.php">VR GAMES</a>
             </form>
         </div>
     </div> <!-- end of header-content -->
