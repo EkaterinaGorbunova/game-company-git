@@ -70,6 +70,7 @@ Log in using admin/admin to manage website's content.
 - add new game (admin only);
 - edit game (admin only);
 - delete game (admin only);
+- social media with links;
 - re-usable header, footer and functions.
 
 #### 5. List of future features
