@@ -21,12 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="539cd656-44f3-4cba-bd42-ae984d91d462" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/game_edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/common/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/functions_defs.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/functions_defs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_users.sql" beforeDir="false" afterPath="$PROJECT_DIR$/create_users.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +54,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/PhpstormProjects/IntroPHP" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -107,7 +103,7 @@
       <workItem from="1607351833140" duration="6184000" />
       <workItem from="1607540917979" duration="11508000" />
       <workItem from="1607566897511" duration="7591000" />
-      <workItem from="1607654757511" duration="4038000" />
+      <workItem from="1607654757511" duration="5399000" />
     </task>
     <servers />
   </component>
@@ -139,10 +135,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="400" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1606760766976" />
-    <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1607541017094">
+    <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1607659288105">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1607541017094" />
+    <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1607659288105" />
     <state width="1557" height="103" key="GridCell.Tab.0.bottom" timestamp="1607322407751">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

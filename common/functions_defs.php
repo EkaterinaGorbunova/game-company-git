@@ -45,19 +45,19 @@ function validate_username(&$username, &$username_error) {
     }
 }
 
-function find_hash($username) {
-    $password_file = fopen("passwords.csv", "r") or die ("find_hash - Unable to open file passwords.csv");
-
-    while (($data = fgetcsv($password_file, 1000, ",")) !== FALSE) {
-        $count = count($data);
-        if ($count >= 2 && $data[0] == $username) {
-            fclose($password_file);
-            return $data[1];
-        }
-    }
-    fclose($password_file);
-    return "";
-}
+//function find_hash($username) {
+//    $password_file = fopen("passwords.csv", "r") or die ("find_hash - Unable to open file passwords.csv");
+//
+//    while (($data = fgetcsv($password_file, 1000, ",")) !== FALSE) {
+//        $count = count($data);
+//        if ($count >= 2 && $data[0] == $username) {
+//            fclose($password_file);
+//            return $data[1];
+//        }
+//    }
+//    fclose($password_file);
+//    return "";
+//}
 
 function get_introdb_conn() {
     return new mysqli("localhost", "intro", "intro", "introdb");
