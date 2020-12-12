@@ -61,9 +61,11 @@ Otherwise you can simply use IDE with embedded Web-server (like PhpStorm or simi
 
 Log in using admin/admin to manage website's content.
 
-#### 4. List of implemented features (implemented within 3 weeks)
+#### 4. List of implemented features
 
 - all data stored in DB;
+- users table;
+- games table;
 - cookies, session, tokens;
 - create new user account;
 - log in;
